@@ -13,11 +13,12 @@ function Merch(props){
   );
 }
 
-Ticket.propTypes = {
+Merch.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
-  price: PropTypes.string //"$4.99" 
+  price: PropTypes.string.isRequired, //"$4.99"  TODO Parse this into a number
+  id: PropTypes.string.isRequired
 };
 
 export default Merch;

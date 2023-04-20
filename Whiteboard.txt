@@ -1,0 +1,6 @@
+
+
+components -
+navbar
+product cards
+footer
