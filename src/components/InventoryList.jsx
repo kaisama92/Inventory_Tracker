@@ -45,7 +45,7 @@ export function InventoryList(props){
           />
           <button value={item.id} onClick={handlePassingOnlyOneItem}>Details</button>
         </div>
-      ))};
+      ))}
     </React.Fragment>
   );
 }

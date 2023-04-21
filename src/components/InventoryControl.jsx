@@ -15,16 +15,22 @@ class InventoryControl extends React.Component {
   }
 
   handleClick = () => {
-    if (this.state.pageVisible >= 5){
+    if (this.state.isOnHomePage){
       this.setState(prevState => ({
-        pageVisible: prevState.pageVisible - 4
+        isOnHomePage: !prevState.isOnHomePage
       }))
     } else {
       this.setState(prevState => ({
-        pageVisible: prevState.pageVisible +1
+        isOnHomePage: !prevState.isOnHomePage
       }))
     }
   }
+
+  handleAddingNewTicketToList = (newCoffee) => {
+    const newMainInventoryList = this.state.mainInventoryList.concat(newCoffee);
+    this.setState({mainInventoryList: newMainInventoryList,
+                  isOnHomePage: true });
+    }
 
   handleDetails = (id) => {
     console.log(id + "handleDetails log");
@@ -42,7 +48,11 @@ class InventoryControl extends React.Component {
     if (this.state.detailsVisible != null){
       currentlyVisibleState = <InventoryItem visibleItem={this.state.detailsVisible}/>
     } else if (this.state.isOnHomePage) {
-      currentlyVisibleState = <InventoryList mainInventoryList={this.state.mainInventoryList} onClickButton={this.handleDetails}/>
+      currentlyVisibleState = <InventoryList mainInventoryList={this.state.mainInventoryList} onClickButton={this.handleDetails}/>;
+      buttonText= "Add New Coffee";
+    } else {
+      currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewTicketToList} />
+      buttonText= "Return to Main List"
     }
     return (
       <React.Fragment>
