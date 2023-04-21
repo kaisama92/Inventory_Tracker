@@ -1,14 +1,9 @@
 import React from "react";
 
-const headerElements = {
-  display: 'flex',
-  flexDirection: 'row'
-};
-
 function Header(){
   return (
     <div class='header'>
-      <h1>epicodus_merch</h1>
+      <h1>Kai's Coffee Shoppe</h1>
     </div>
   );
 }
