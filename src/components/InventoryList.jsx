@@ -21,6 +21,7 @@ export function InventoryItem(props){
         <h3>Quantity in Stock</h3>
         <p>{visibleItem.quantity}lb(s)</p>
         <h3>{visibleItem.price}</h3>
+        <button onClick={props.viewUpdateForm}>Update</button>
     </React.Fragment>
   );
 }

@@ -10,7 +10,7 @@ class InventoryControl extends React.Component {
     this.state = {
       isDetailsVisible: false,
       isOnHomePage: true,
-      isUpdateFormVisible: null,
+      isUpdateFormVisible: false,
       detailsVisible: null,
       mainInventoryList: []
     };
@@ -46,7 +46,18 @@ class InventoryControl extends React.Component {
     }
   }
 
-  viewUpdate = (id) => {
+  handleUpdate = (coffee) => {
+    const editedCoffeeList = this.state.mainInventoryList
+          .filter(item => item.id !== coffee.id)
+          .concat(coffee);
+    this.setState({
+      mainInventoryList: editedCoffeeList,
+      isUpdateFormVisible: false,
+      detailsVisible: null
+    });
+  }
+
+  viewUpdate = () => {
     this.setState({isUpdateFormVisible: true})
   }
 
@@ -55,14 +66,16 @@ class InventoryControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.detailsVisible != null){
-      currentlyVisibleState = <InventoryItem visibleItem={this.state.detailsVisible}/>;
+    if (this.state.isUpdateFormVisible){
+      currentlyVisibleState = <UpdateCoffeeForm itemToUpdate={this.state.detailsVisible} onCoffeeUpdate={this.handleUpdate}/>
+    } else if (this.state.detailsVisible != null){
+      currentlyVisibleState = <InventoryItem visibleItem={this.state.detailsVisible} viewUpdateForm={this.viewUpdate}/>;
       buttonText= "Return to List";
     } else if (this.state.isOnHomePage) {
       currentlyVisibleState = <InventoryList mainInventoryList={this.state.mainInventoryList} onClickButton={this.handleDetails}/>;
       buttonText= "Add New Coffee";
     } else if(this.state.isUpdateFormVisible){
-      currentlyVisibleState = <UpdateCoffeeForm onCoffeeUpdate={this.handleUpdatecoffee} />
+      currentlyVisibleState = <UpdateCoffeeForm coffee={this.state.detailsVisible} />
     } else {
       currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewTicketToList} />;
       buttonText= "Return to Main List";
@@ -71,8 +84,6 @@ class InventoryControl extends React.Component {
       <React.Fragment>
         {currentlyVisibleState}
         {this.state.detailsVisible === null && <button onClick={this.handleClick}>{buttonText}</button>}
-        {this.state.detailsVisible != null && <button onClick={this.handleUpdate}>Update</button>}
-        {this.state.detailsVisible != null && <button onClick={this.viewUpdate}>{buttonText}</button>}
       </React.Fragment>
     );
   }
