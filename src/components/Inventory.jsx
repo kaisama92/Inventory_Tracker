@@ -17,6 +17,7 @@ function Inventory(props){
 Inventory.propTypes = {
   name: PropTypes.string.isRequired,
   roast: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   price: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired

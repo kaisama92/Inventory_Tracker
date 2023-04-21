@@ -36,11 +36,11 @@ export function InventoryList(props){
       {props.mainInventoryList.map((item) => (
         <div>
           <Inventory 
-            name = {item.name}
-            description = {item.roast}
-            quantity = {item.quantity}
-            origin = {item.origin}
-            price = {item.price}
+            name = {"Coffee Name: " + item.name}
+            roast = {"Roast: " + item.roast}
+            quantity = {item.quantity * 130 + "lbs"}
+            origin = {"Origin: " + item.origin}
+            price = {"Price Per lb: " + item.price}
             key = {item.id}
           />
           <button value={item.id} onClick={handlePassingOnlyOneItem}>Details</button>
