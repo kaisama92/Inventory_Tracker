@@ -11,36 +11,7 @@ class MerchControl extends React.Component {
       isDetailsVisible: false,
       isOnHomePage: true,
       detailsVisible: null,
-      mainMerchList: [
-        {
-          name: 'Epicodus.keycaps',
-          description: 'Epicodus themed keycaps for your keyboard',
-          quantity: 5,
-          price: "$4.99",
-          id: "1"
-        },
-        {
-          name: 'Epicodus.legwarmers',
-          description: 'Green, black, and grey for the in-person commuters in the winter months',
-          quantity: 464024,
-          price: "$79.49",
-          id: "2"
-        },
-        {
-          name: 'Epicodus.chair',
-          description: 'Green, black, and grey with the Epicodus Emu',
-          quantity: 5,
-          price: "$4.99",
-          id: "3"
-        },
-        {
-          name: "Epicodus.lectures",
-          description: 'Learn how to program with these presentations',
-          quantity: 0,
-          price: "$10,000",
-          id: "4"
-        }
-      ]
+      mainInventoryList: []
     };
   }
 
