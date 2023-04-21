@@ -14,10 +14,12 @@ export function InventoryItem(props){
       <hr/> 
         <h1>Item Detail</h1>
         <h2><em>{visibleItem.name}</em></h2>
-        <h3>Description</h3>
-        <p>{visibleItem.description}</p>
+        <h3>Roast</h3>
+        <p>{visibleItem.roast}</p>
+        <h3>Origin</h3>
+        <p>{visibleItem.origin}</p>
         <h3>Quantity in Stock</h3>
-        <p>{visibleItem.quantity}</p>
+        <p>{visibleItem.quantity}lb(s)</p>
         <h3>{visibleItem.price}</h3>
     </React.Fragment>
   );
@@ -35,8 +37,9 @@ export function InventoryList(props){
         <div>
           <Inventory 
             name = {item.name}
-            description = {item.description}
+            description = {item.roast}
             quantity = {item.quantity}
+            origin = {item.origin}
             price = {item.price}
             key = {item.id}
           />
