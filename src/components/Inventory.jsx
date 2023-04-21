@@ -18,9 +18,8 @@ Inventory.propTypes = {
   name: PropTypes.string.isRequired,
   roast: PropTypes.string.isRequired,
   origin: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired,
+  quantity: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
 };
 
 export default Inventory;

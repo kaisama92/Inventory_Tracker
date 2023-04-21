@@ -34,14 +34,13 @@ export function InventoryList(props){
     <React.Fragment>
       <hr/>
       {props.mainInventoryList.map((item) => (
-        <div>
+        <div key={item.id}>
           <Inventory 
             name = {"Coffee Name: " + item.name}
             roast = {"Roast: " + item.roast}
             quantity = {item.quantity * 130 + "lbs"}
             origin = {"Origin: " + item.origin}
             price = {"Price Per lb: " + item.price}
-            key = {item.id}
           />
           <button value={item.id} onClick={handlePassingOnlyOneItem}>Details</button>
         </div>

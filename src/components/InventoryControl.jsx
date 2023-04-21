@@ -33,31 +33,37 @@ class InventoryControl extends React.Component {
     }
 
   handleDetails = (id) => {
-    console.log(id + "handleDetails log");
-    const item = this.state.mainInventoryList.filter(merch => merch.id === id)[0];
-    console.log(item);
-    console.log("^ This is the item received")
-    this.setState({detailsVisible: item });
+    if (this.state.detailsVisible === null){
+      console.log(id + "handleDetails log");
+      const item = this.state.mainInventoryList.filter(merch => merch.id === id)[0];
+      console.log(item);
+      console.log("^ This is the item received")
+      this.setState({detailsVisible: item });
+    } else {
+      this.setState({detailsVisible: null});
+    }
   }
 
-  // handleViewDetails = () => {}
+  
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.detailsVisible != null){
-      currentlyVisibleState = <InventoryItem visibleItem={this.state.detailsVisible}/>
+      currentlyVisibleState = <InventoryItem visibleItem={this.state.detailsVisible}/>;
+      buttonText= "Return to List";
     } else if (this.state.isOnHomePage) {
       currentlyVisibleState = <InventoryList mainInventoryList={this.state.mainInventoryList} onClickButton={this.handleDetails}/>;
       buttonText= "Add New Coffee";
     } else {
-      currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewTicketToList} />
-      buttonText= "Return to Main List"
+      currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewTicketToList} />;
+      buttonText= "Return to Main List";
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
         {this.state.detailsVisible === null && <button onClick={this.handleClick}>{buttonText}</button>}
+        {this.state.detailsVisible != null && <button onClick={this.handleDetails}>{buttonText}</button>}
       </React.Fragment>
     );
   }
