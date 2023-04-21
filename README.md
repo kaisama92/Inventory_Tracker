@@ -1,19 +1,20 @@
-# _{Application Name}_
+# _Kai's Inventory Management_
 
-#### By _**{List of contributors}**_
+#### By _**Kai Clausen**_
 
 #### _{Brief description of application}_
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _HTML_
+* _REACT_
+* _create-react-app_
+* _JavaScript_
+* _CSS_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This Application is an Inventory Tracker For Kai's Coffee Shoppe. It was created for an Independent Code Review. Styling was not imperative. The application has Create, Read, Update. Stretch goal was Delete functionality._
 
 ## Component Diagram
 
@@ -21,21 +22,19 @@ _{This is a detailed description of your application. Give as much detail as nee
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Clone this Repository_
+* _Navigate to the top directory in you command line_
+* _Enter the command ```npm i```_
+* _When that is finished enter the command ```npm start```_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _The application throws a warning for unused variables. They are used implicitly._
+* _The Component Diagram illustrates a Delete page. This has not been implemented yet._
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+MIT - If you find any bugs, feel free to fix them yourself, or contact Kai at kaiclausen123@gmail.com. Feedback is welcome and appreciated!
 
-Copyright (c) _date_ _author name(s)_
+Copyright (c) _2023_ _Kai Clausen_
