@@ -7,7 +7,6 @@ class InventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageVisible: 1,
       isDetailsVisible: false,
       isOnHomePage: true,
       detailsVisible: null,
