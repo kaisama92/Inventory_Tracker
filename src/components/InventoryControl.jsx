@@ -1,6 +1,7 @@
 import React from 'react';
 import NewCoffeeForm from './AddNewInventory';
 import { InventoryList, InventoryItem } from './InventoryList';
+import UpdateCoffeeForm from './UpdateCoffee';
 
 class InventoryControl extends React.Component {
 
@@ -9,6 +10,7 @@ class InventoryControl extends React.Component {
     this.state = {
       isDetailsVisible: false,
       isOnHomePage: true,
+      isUpdateFormVisible: null,
       detailsVisible: null,
       mainInventoryList: []
     };
@@ -44,6 +46,10 @@ class InventoryControl extends React.Component {
     }
   }
 
+  viewUpdate = (id) => {
+    this.setState({isUpdateFormVisible: true})
+  }
+
   
 
   render(){
@@ -55,6 +61,8 @@ class InventoryControl extends React.Component {
     } else if (this.state.isOnHomePage) {
       currentlyVisibleState = <InventoryList mainInventoryList={this.state.mainInventoryList} onClickButton={this.handleDetails}/>;
       buttonText= "Add New Coffee";
+    } else if(this.state.isUpdateFormVisible){
+      currentlyVisibleState = <UpdateCoffeeForm onCoffeeUpdate={this.handleUpdatecoffee} />
     } else {
       currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewTicketToList} />;
       buttonText= "Return to Main List";
@@ -63,7 +71,8 @@ class InventoryControl extends React.Component {
       <React.Fragment>
         {currentlyVisibleState}
         {this.state.detailsVisible === null && <button onClick={this.handleClick}>{buttonText}</button>}
-        {this.state.detailsVisible != null && <button onClick={this.handleDetails}>{buttonText}</button>}
+        {this.state.detailsVisible != null && <button onClick={this.handleUpdate}>Update</button>}
+        {this.state.detailsVisible != null && <button onClick={this.viewUpdate}>{buttonText}</button>}
       </React.Fragment>
     );
   }
