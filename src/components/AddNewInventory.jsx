@@ -26,7 +26,7 @@ function NewTicketForm(props){
           placeholder="$1.99" />
         <button type='submit'>Add!</button>
       </form>
-    </React.Fragment>
+    </React.Fragment> 
   );
 }
 
