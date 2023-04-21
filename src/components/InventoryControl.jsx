@@ -2,7 +2,7 @@ import React from 'react';
 import NewTicketForm from './NewTicketForm';
 import { MerchList, MerchItem } from './MerchList';
 
-class MerchControl extends React.Component {
+class InventoryControl extends React.Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class MerchControl extends React.Component {
 
   handleDetails = (id) => {
     console.log(id + "handleDetails log");
-    const item = this.state.mainMerchList.filter(merch => merch.id === id)[0];
+    const item = this.state.mainInventoryList.filter(merch => merch.id === id)[0];
     console.log(item);
     console.log("^ This is the item received")
     this.setState({detailsVisible: item });
@@ -41,9 +41,9 @@ class MerchControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.detailsVisible != null){
-      currentlyVisibleState = <MerchItem visiblemerch={this.state.detailsVisible}/>
+      currentlyVisibleState = <InventoryItem visibleItem={this.state.detailsVisible}/>
     } else if (this.state.isOnHomePage) {
-      currentlyVisibleState = <MerchList mainMerchList={this.state.mainMerchList} onClickButton={this.handleDetails}/>
+      currentlyVisibleState = <InventoryList mainInventoryList={this.state.mainInventoryList} onClickButton={this.handleDetails}/>
     }
     return (
       <React.Fragment>
@@ -55,4 +55,4 @@ class MerchControl extends React.Component {
 }
 
 
-export default MerchControl;
+export default InventoryControl;
