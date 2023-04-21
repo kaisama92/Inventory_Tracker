@@ -7,7 +7,7 @@ function App(){
     <React.Fragment>
       <Header />
       <MerchControl />
-    </React.Fragment>
+    </React.Fragment> 
   );
 }
 
