@@ -1,6 +1,6 @@
 import React from 'react';
-import Inventory from './Merch';
-import MerchControl from './MerchControl';
+import Inventory from './Inventory';
+import InventoryControl from './InventoryControl';
 import PropTypes from 'prop-types';
 
 export function InventoryItem(props){

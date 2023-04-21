@@ -1,6 +1,6 @@
 import React from 'react';
-import NewTicketForm from './NewTicketForm';
-import { MerchList, MerchItem } from './MerchList';
+import NewCoffeeForm from './AddNewInventory';
+import { InventoryList, InventoryItem } from './InventoryList';
 
 class InventoryControl extends React.Component {
 

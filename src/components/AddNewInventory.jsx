@@ -1,6 +1,6 @@
 import React from "react";
 
-function NewTicketForm(props){
+function NewCoffeeForm(props){
   return (
     <React.Fragment>
       <form onSubmit={handleNewInventoryItemSubmission}>
@@ -30,4 +30,4 @@ function NewTicketForm(props){
   );
 }
 
-export default NewTicketForm; 
+export default NewCoffeeForm; 
