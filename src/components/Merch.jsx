@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Merch(props){
+function Inventory(props){
   return (
     <React.Fragment>
       <h3>{props.name}</h3>
@@ -13,12 +13,12 @@ function Merch(props){
   );
 }
 
-Merch.propTypes = {
+Inventory.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
-  price: PropTypes.string.isRequired, //"$4.99"  TODO Parse this into a number
+  price: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired
 };
 
-export default Merch;
+export default Inventory;
