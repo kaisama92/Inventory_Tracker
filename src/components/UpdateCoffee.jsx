@@ -46,6 +46,7 @@ function UpdateCoffeeForm(props){
         <input 
           id="quantity"
           type="number"
+          min="0"
           name="quantity"
           defaultValue={itemToUpdate.quantity} />
         <br />

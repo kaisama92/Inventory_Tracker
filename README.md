@@ -32,6 +32,7 @@ _This Application is an Inventory Tracker For Kai's Coffee Shoppe. It was create
 
 * _The application throws a warning for unused variables. They are used implicitly._
 * _The Component Diagram illustrates a Delete page. This has not been implemented yet._
+* _The Create functionality allows for negative numbers to be input._
 
 ## License
 
